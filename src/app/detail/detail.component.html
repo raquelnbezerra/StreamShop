@@ -1,0 +1,32 @@
+<div class="banner-container m-2">
+    <img class="banner" src="{{banner?.image}}">
+</div>
+
+<div class="card session" *ngFor="let item of film">
+    <div class="card-body">
+
+        <p class="card-title fw-bold">
+            <fa-icon class="icon-title" [icon]="faHeart"></fa-icon>
+            {{item.name}}
+        </p>
+
+        <p class="card-text"> {{item.address}}</p>
+        <hr>
+
+
+        <div class="" *ngFor="let room of item.rooms">
+
+            <div class="card-title"> {{room.name}} -
+                <span class="type" *ngFor="let type of room.types">
+                    <span> {{type}}</span>
+                </span>
+            </div>
+
+            <button *ngFor="let session of room.sessions" type="button" class="btn btn-session m-2 session-time">
+                {{session.time}}</button>
+
+        </div>
+    </div>
+
+
+</div>

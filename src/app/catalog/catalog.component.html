@@ -1,0 +1,22 @@
+<div class="m-3">
+    <div class="row">
+        <div class="col-md-2 py-2" *ngFor="let item of catalog">
+            <div class="card-group">
+                <div class="card">
+                    <img src="{{item.image}}" class="movie-banner card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title max-lines ">{{item.title}} </h5>
+
+                        <div class="d-flex flex-row">
+                            <span *ngFor="let genre of item.genres" class="genre p-1">{{genre}}</span>
+                        </div>
+
+
+                    </div>
+                    <button [routerLink]="['/detail', item.id ]" type="button"
+                        class="btn btn-dark btn-sm btn-lg btn-block m-2">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

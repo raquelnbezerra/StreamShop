@@ -1,0 +1,13 @@
+.search{
+    width: 100%;
+    text-align: center;
+}
+
+.container-search{
+    max-width: 100%;
+}
+
+input[type="search"]::placeholder { 
+                  
+    text-align: left;
+}
