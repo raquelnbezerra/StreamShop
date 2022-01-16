@@ -1,8 +1,16 @@
 <header class="text-white header">
-    <div class="container">
-
-        <img class="logo" src="https://streamshop.com.br/wp-content/uploads/2020/12/STREAMSHOPLOGOSITE.png"
-            alt="STREAMSHOPLOGOSITE">
+    <div class="">
+        <div class="row">
+            <div class="col-md-1 align-middle icon-arrow d-none d-sm-block">
+                <span *ngIf="!isHome" class="icon">
+                    <fa-icon [icon]="icon" [routerLink]="['/']"></fa-icon>
+                </span>
+            </div>
+            <div class="col-md-11">
+                <img class="logo" src="https://streamshop.com.br/wp-content/uploads/2020/12/STREAMSHOPLOGOSITE.png"
+                    alt="STREAMSHOPLOGOSITE">
+            </div>
+        </div>
 
     </div>
 </header>

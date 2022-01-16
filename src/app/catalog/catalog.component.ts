@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Catalog } from '../models/catalog.model';
 import { CatalogService } from '../sevices/catalog.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { CatalogService } from '../sevices/catalog.service';
 })
 export class CatalogComponent implements OnInit {
 
-  catalog: any;
+  catalog: Catalog[] = [];
 
   constructor(private catalogService: CatalogService) { }
 

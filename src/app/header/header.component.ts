@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  icon = faArrowLeft;
+  isHome = false;
 
-  ngOnInit(): void {
+  constructor(private router: Router) {
+
+    //Exibe a seta para voltar somente em Detail
+    router.events.subscribe((val) => {
+      if (this.router.url === '/') {
+        this.isHome = true;
+      } else {
+        this.isHome = false;
+      }
+    });
+
   }
+
+  ngOnInit(): void { }
 
 }

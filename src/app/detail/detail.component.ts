@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CatalogService } from '../sevices/catalog.service';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { Film } from '../models/film.model';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -9,23 +10,19 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 })
 export class DetailComponent implements OnInit {
 
-  private id: any;
-  film: any;
+  id: string = '';
+  film: Film | any;
   banner: any;
   faHeart = faHeart;
 
   constructor(private catalogService: CatalogService, private route: ActivatedRoute) {
 
-
-
-
     this.route.params.subscribe(params => {
-      this.id = +params['id'];
+      this.id = params['id'];
       this.getBanner();
     });
 
     this.catalogService.getMovieById(this.id).subscribe(res => {
-
       this.film = res;
     })
 

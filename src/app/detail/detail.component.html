@@ -16,10 +16,13 @@
 
         <div class="" *ngFor="let room of item.rooms">
 
-            <div class="card-title"> {{room.name}} -
-                <span class="type" *ngFor="let type of room.types">
-                    <span> {{type}}</span>
-                </span>
+            <div class="card-title">
+                <p>
+                    <span class="fw-bold">{{room.name}} -</span>
+                    <span class="type" *ngFor="let type of room.types">
+                        <span> {{type}}</span>
+                    </span>
+                </p>
             </div>
 
             <button *ngFor="let session of room.sessions" type="button" class="btn btn-session m-2 session-time">
